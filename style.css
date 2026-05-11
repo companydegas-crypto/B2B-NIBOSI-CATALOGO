@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #0d0d0d;
+    --secondary-color: #ffffff;
+    --accent-color: #d4af37; /* Premium Gold */
+    --text-main: #1a1a1a;
+    --text-light: #555555;
+    --bg-light: #f8f9fa;
+    --border-color: #e5e5e5;
+    --whatsapp-green: #25d366;
+    --whatsapp-dark: #1da851;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 120px; /* Space for sticky order bar */
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.brand-subtitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* B2B Benefits Section */
+.b2b-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: -30px auto 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.benefit-card {
+    background: var(--secondary-color);
+    padding: 20px 15px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+}
+
+.benefit-icon {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.benefit-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+}
+
+/* Product Section */
+.product-section {
+    margin-bottom: 80px;
+    page-break-inside: avoid;
+}
+
+.product-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.product-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.product-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+/* Variant Grid */
+.variant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.variant-card {
+    background: #ffffff;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.variant-card:hover {
+    border-color: var(--border-color);
+}
+
+.variant-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    overflow: hidden;
+    background-color: var(--bg-light);
+    border-radius: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #f0f0f0;
+}
+
+.variant-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.variant-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 10px;
+    height: 2.4em;
+    overflow: hidden;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border-color);
+    background: #fff;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.qty-btn:hover {
+    background: var(--bg-light);
+    border-color: var(--accent-color);
+}
+
+.qty-btn:active {
+    transform: scale(0.9);
+}
+
+.qty-input {
+    width: 40px;
+    border: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: transparent;
+}
+
+/* Calculator Styles */
+.calculator-section {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 40px !important;
+    margin-top: 60px;
+    border: 1px solid var(--border-color);
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.calc-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.result-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.result-item span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.result-item strong {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.result-item.profit strong {
+    color: var(--whatsapp-dark);
+}
+
+.result-item.margin strong {
+    color: var(--accent-color);
+}
+
+/* Order Summary Styles */
+.order-summary {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 40px !important;
+    margin-top: 60px;
+}
+
+.order-list {
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.order-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-item-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.order-item-variant {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.order-item-qty {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.order-total-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+    z-index: 1001;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--bg-light);
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+}
+
+.cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.cta-text {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: var(--whatsapp-green);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+.whatsapp-btn:hover {
+    background-color: var(--whatsapp-dark);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+    transform: translateY(-2px);
+}
+
+.whatsapp-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #aaaaaa;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 15px 30px;
+    }
+
+    .brand-title {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+    
+    .product-title {
+        font-size: 1.6rem;
+    }
+
+    .b2b-benefits {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -15px;
+    }
+
+    .benefit-card {
+        padding: 15px 10px;
+    }
+    
+    .variant-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .whatsapp-btn {
+        padding: 14px 20px;
+        font-size: 0.8rem;
+    }
+    
+    .cta-section {
+        padding: 40px 15px;
+    }
+
+    .order-total-bar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .order-total-bar span {
+        font-size: 0.9rem;
+    }
+}
+
+@media print {
+    body {
+        background-color: white;
+        padding-bottom: 0;
+    }
+    .cta-section, .b2b-benefits, .order-total-bar {
+        display: none !important;
+    }
+    .product-section {
+        page-break-after: always;
+    }
+}
